@@ -59,7 +59,7 @@ The columns of the dataset are also reordered for readability.
 The dataset uses descriptive variable names.  The variable names are taken from the 'features.txt' file.  
 Please see step [1] above for details as this is where the column names are changed.
 
-[5] Create a new table with the mean of each variable
+[5] _Create a new table with the mean of each variable_
 
 The data is melted using id variables 'subjectid' and 'activity' since these define the groupings for which we will be computing mean values.
 The data is then cast, employing the 'mean' function in order to compute the mean value of each variable for each subject and activity.
