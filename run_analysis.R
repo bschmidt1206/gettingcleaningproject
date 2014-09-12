@@ -70,7 +70,7 @@ ds.melt = melt(ds.subset, id=c("subjectid", "activity"), measure.vars=idxVal)
 # Compute mean value for each {subjectid, activity} pair
 ds.means = dcast(ds.melt, subjectid + activity ~ variable, mean)
 
-# Prepend 'mean()-' to all feature names since these columns are mean values
+# Prepend 'mean()-' to all feature names since these variables are mean values
 colnames(ds.means)[3:68] = paste0("mean()-", colnames(ds.means)[3:68])
 
 # Write to output file

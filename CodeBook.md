@@ -15,3 +15,7 @@ The second column is 'activity' and is a friendly name for activities (WALKING, 
 The remaining columns are the mean values for each of 66 variables (for a specific subject and activity).
 
 The 66 variables (a subset of the variables in the UCI HAR Dataset) are the mean and standard deviation of the signals described in the 'features_info.txt' code book for the UCI HAR Dataset.
+Please see the 'features_info.txt' for information about the signals and the logic used to create the variables.
+
+The variable names in HAR_means are the same as in the UCI HAR Dataset (with 'mean()-' prepended to indicate that they are mean values).
+Preservation of naming conventions facilitates cross-referencing between the datasets.
