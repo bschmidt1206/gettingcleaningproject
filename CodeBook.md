@@ -85,7 +85,7 @@ MeanFreqBodyGyroscopeJerkMagnitudeStd
 
 These 66 variables (derived from a subset of the variables in the UCI HAR Dataset) are means of mean and standard deviation variables for the signals described in the 'features_info.txt' code book for the UCI HAR Dataset.
 
-The conventions for variable names in HAR_means is as follows:
+The conventions for the variable names in HAR_means is as follows:
 * All variable names begin with 'Mean' because all are mean values.
 * Some variables are time domain signals (labled 'Time') and others are frequency domain signals ('Freq').
 * Accelerometer measures are separated labeled with either 'BodyAcceleration' or 'GravityAcceleration'.
