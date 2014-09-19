@@ -16,72 +16,72 @@ The second column is 'activity' and is a friendly name for activities (WALKING, 
 
 The remaining columns are the mean values for each of 66 variables (for a specific subject and activity).
 
-MeanTimeBodyAccelerationMeanX
-MeanTimeBodyAccelerationMeanY
-MeanTimeBodyAccelerationMeanZ
-MeanTimeBodyAccelerationStdX
-MeanTimeBodyAccelerationStdY
-MeanTimeBodyAccelerationStdZ
-MeanTimeGravityAccelerationMeanX
-MeanTimeGravityAccelerationMeanY
-MeanTimeGravityAccelerationMeanZ
-MeanTimeGravityAccelerationStdX
-MeanTimeGravityAccelerationStdY
-MeanTimeGravityAccelerationStdZ
-MeanTimeBodyAccelerationJerkMeanX
-MeanTimeBodyAccelerationJerkMeanY
-MeanTimeBodyAccelerationJerkMeanZ
-MeanTimeBodyAccelerationJerkStdX
-MeanTimeBodyAccelerationJerkStdY
-MeanTimeBodyAccelerationJerkStdZ
-MeanTimeBodyGyroscopeMeanX
-MeanTimeBodyGyroscopeMeanY
-MeanTimeBodyGyroscopeMeanZ
-MeanTimeBodyGyroscopeStdX
-MeanTimeBodyGyroscopeStdY
-MeanTimeBodyGyroscopeStdZ
-MeanTimeBodyGyroscopeJerkMeanX
-MeanTimeBodyGyroscopeJerkMeanY
-MeanTimeBodyGyroscopeJerkMeanZ
-MeanTimeBodyGyroscopeJerkStdX
-MeanTimeBodyGyroscopeJerkStdY
-MeanTimeBodyGyroscopeJerkStdZ
-MeanTimeBodyAccelerationMagnitudeMean
-MeanTimeBodyAccelerationMagnitudeStd
-MeanTimeGravityAccelerationMagnitudeMean
-MeanTimeGravityAccelerationMagnitudeStd
-MeanTimeBodyAccelerationJerkMagnitudeMean
-MeanTimeBodyAccelerationJerkMagnitudeStd
-MeanTimeBodyGyroscopeMagnitudeMean
-MeanTimeBodyGyroscopeMagnitudeStd
-MeanTimeBodyGyroscopeJerkMagnitudeMean
-MeanTimeBodyGyroscopeJerkMagnitudeStd
-MeanFreqBodyAccelerationMeanX
-MeanFreqBodyAccelerationMeanY
-MeanFreqBodyAccelerationMeanZ
-MeanFreqBodyAccelerationStdX
-MeanFreqBodyAccelerationStdY
-MeanFreqBodyAccelerationStdZ
-MeanFreqBodyAccelerationJerkMeanX
-MeanFreqBodyAccelerationJerkMeanY
-MeanFreqBodyAccelerationJerkMeanZ
-MeanFreqBodyAccelerationJerkStdX
-MeanFreqBodyAccelerationJerkStdY
-MeanFreqBodyAccelerationJerkStdZ
-MeanFreqBodyGyroscopeMeanX
-MeanFreqBodyGyroscopeMeanY
-MeanFreqBodyGyroscopeMeanZ
-MeanFreqBodyGyroscopeStdX
-MeanFreqBodyGyroscopeStdY
-MeanFreqBodyGyroscopeStdZ
-MeanFreqBodyAccelerationMagnitudeMean
-MeanFreqBodyAccelerationMagnitudeStd
-MeanFreqBodyAccelerationJerkMagnitudeMean
-MeanFreqBodyAccelerationJerkMagnitudeStd
-MeanFreqBodyGyroscopeMagnitudeMean
-MeanFreqBodyGyroscopeMagnitudeStd
-MeanFreqBodyGyroscopeJerkMagnitudeMean
-MeanFreqBodyGyroscopeJerkMagnitudeStd
+* MeanTimeBodyAccelerationMeanX
+* MeanTimeBodyAccelerationMeanY
+* MeanTimeBodyAccelerationMeanZ
+* MeanTimeBodyAccelerationStdX
+* MeanTimeBodyAccelerationStdY
+* MeanTimeBodyAccelerationStdZ
+* MeanTimeGravityAccelerationMeanX
+* MeanTimeGravityAccelerationMeanY
+* MeanTimeGravityAccelerationMeanZ
+* MeanTimeGravityAccelerationStdX
+* MeanTimeGravityAccelerationStdY
+* MeanTimeGravityAccelerationStdZ
+* MeanTimeBodyAccelerationJerkMeanX
+* MeanTimeBodyAccelerationJerkMeanY
+* MeanTimeBodyAccelerationJerkMeanZ
+* MeanTimeBodyAccelerationJerkStdX
+* MeanTimeBodyAccelerationJerkStdY
+* MeanTimeBodyAccelerationJerkStdZ
+* MeanTimeBodyGyroscopeMeanX
+* MeanTimeBodyGyroscopeMeanY
+* MeanTimeBodyGyroscopeMeanZ
+* MeanTimeBodyGyroscopeStdX
+* MeanTimeBodyGyroscopeStdY
+* MeanTimeBodyGyroscopeStdZ
+* MeanTimeBodyGyroscopeJerkMeanX
+* MeanTimeBodyGyroscopeJerkMeanY
+* MeanTimeBodyGyroscopeJerkMeanZ
+* MeanTimeBodyGyroscopeJerkStdX
+* MeanTimeBodyGyroscopeJerkStdY
+* MeanTimeBodyGyroscopeJerkStdZ
+* MeanTimeBodyAccelerationMagnitudeMean
+* MeanTimeBodyAccelerationMagnitudeStd
+* MeanTimeGravityAccelerationMagnitudeMean
+* MeanTimeGravityAccelerationMagnitudeStd
+* MeanTimeBodyAccelerationJerkMagnitudeMean
+* MeanTimeBodyAccelerationJerkMagnitudeStd
+* MeanTimeBodyGyroscopeMagnitudeMean
+* MeanTimeBodyGyroscopeMagnitudeStd
+* MeanTimeBodyGyroscopeJerkMagnitudeMean
+* MeanTimeBodyGyroscopeJerkMagnitudeStd
+* MeanFreqBodyAccelerationMeanX
+* MeanFreqBodyAccelerationMeanY
+* MeanFreqBodyAccelerationMeanZ
+* MeanFreqBodyAccelerationStdX
+* MeanFreqBodyAccelerationStdY
+* MeanFreqBodyAccelerationStdZ
+* MeanFreqBodyAccelerationJerkMeanX
+* MeanFreqBodyAccelerationJerkMeanY
+* MeanFreqBodyAccelerationJerkMeanZ
+* MeanFreqBodyAccelerationJerkStdX
+* MeanFreqBodyAccelerationJerkStdY
+* MeanFreqBodyAccelerationJerkStdZ
+* MeanFreqBodyGyroscopeMeanX
+* MeanFreqBodyGyroscopeMeanY
+* MeanFreqBodyGyroscopeMeanZ
+* MeanFreqBodyGyroscopeStdX
+* MeanFreqBodyGyroscopeStdY
+* MeanFreqBodyGyroscopeStdZ
+* MeanFreqBodyAccelerationMagnitudeMean
+* MeanFreqBodyAccelerationMagnitudeStd
+* MeanFreqBodyAccelerationJerkMagnitudeMean
+* MeanFreqBodyAccelerationJerkMagnitudeStd
+* MeanFreqBodyGyroscopeMagnitudeMean
+* MeanFreqBodyGyroscopeMagnitudeStd
+* MeanFreqBodyGyroscopeJerkMagnitudeMean
+* MeanFreqBodyGyroscopeJerkMagnitudeStd
 
 These 66 variables (derived from a subset of the variables in the UCI HAR Dataset) are means of mean and standard deviation variables for the signals described in the 'features_info.txt' code book for the UCI HAR Dataset.
 
