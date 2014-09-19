@@ -1,14 +1,14 @@
+# NOTE: Before running this script you need to download and unzip the original dataset
+# to the "UCI HAR Dataset" folder in the working directory.  Please see the README.md
+# file for links to the dataset and related resources.
+
 rm(list=ls())
 
 library(reshape2)
 
 # (0) Load data tables from files ####
 
-# NOTE: You need to first download and unzip the raw dataset
-# to the "UCI HAR Dataset" folder in the working directory
-# Please see the README for more info about the dataset
-
-# Load names for the activities (coded 1:6)
+# Load friendly names for the activities (coded as an integer in the range 1:6)
 activity_labels = read.table("UCI HAR Dataset\\activity_labels.txt", stringsAsFactors=F)
 colnames(activity_labels) = c("activityid", "activity")
 
@@ -28,11 +28,14 @@ test.s = read.table("UCI HAR Dataset\\test\\subject_test.txt")
 
 # (1) Merge training and test sets ####
 
+# Combine into train and test data frames
 train = cbind(train.s, train.y, train.x)
 test = cbind(test.s, test.y, test.x)
 
-# dim: 10299 x 563
+# Combine train and test into a single data frame
 ds.full = rbind(train, test)
+
+# Use friendly names for columns
 colnames(ds.full) = c("subjectid", "activityid", features$feature)
 
 # Remove objects no longer needed
@@ -40,13 +43,10 @@ rm(train, train.x, train.y, train.s, test, test.x, test.y, test.s)
 
 # (2) Extract mean and standard deviation measurements ####
 
-# Indices of variables of interest
+# Get indices of variables of interest (the mean and std measurements)
 idx = grep(pattern = "mean\\(|std\\(", features$feature, value=F)
 
-# Variable names for variables of interest
-idxVal = grep(pattern = "mean\\(|std\\(", features$feature, value=T)
-
-# The indices of the variables are incremented by 2 in order to
+# The indices of the variables are incremented by 2 here in order to
 # account for the first two columns (subjectid, activityid)
 ds.subset = ds.full[, c(1:2,idx+2)]
 
@@ -55,23 +55,35 @@ ds.subset = ds.full[, c(1:2,idx+2)]
 ds.subset = merge(ds.subset, activity_labels, by="activityid")
 
 # Reorder columns for easier reading of the table
-ds.subset = ds.subset[,c("subjectid", "activityid", "activity", idxVal)]
+ds.subset = ds.subset[,c("subjectid", "activityid", "activity", colnames(ds.subset)[3:68])]
 
 # (4) Use descriptive variable names ####
 
-# NOTE: This was taken care of above in Step (1) when the column names
-# are set to be the feature labels
+tmp = colnames(ds.subset)[4:69]
+tmp = gsub(pattern = "Acc", replacement="Acceleration", tmp)
+tmp = gsub(pattern = "Gyro", replacement="Gyroscope", tmp)
+tmp = gsub(pattern = "Mag", replacement="Magnitude", tmp)
+tmp = gsub(pattern = "\\(\\)", replacement="", tmp)
+tmp = gsub(pattern = "^t", replacement="Time", tmp)
+tmp = gsub(pattern = "^f", replacement="Freq", tmp)
+tmp = gsub(pattern = "BodyBody", replacement="Body", tmp)
+tmp = gsub(pattern = "-mean", replacement="Mean", tmp)
+tmp = gsub(pattern = "-std", replacement="Std", tmp)
+tmp = gsub(pattern = "-X", replacement="X", tmp)
+tmp = gsub(pattern = "-Y", replacement="Y", tmp)
+tmp = gsub(pattern = "-Z", replacement="Z", tmp)
+colnames(ds.subset)[4:69] = tmp
 
 # (5) Create a new table with the mean of each variable  ####
 # for each activity and each subject
 
-ds.melt = melt(ds.subset, id=c("subjectid", "activity"), measure.vars=idxVal)
+ds.melt = melt(ds.subset, id=c("subjectid", "activity"), measure.vars=colnames(ds.subset)[4:69])
 
 # Compute mean value for each {subjectid, activity} pair
 ds.means = dcast(ds.melt, subjectid + activity ~ variable, mean)
 
-# Prepend 'mean()-' to all feature names since these variables are mean values
-colnames(ds.means)[3:68] = paste0("mean()-", colnames(ds.means)[3:68])
+# Prepend 'Mean' to all feature names since these variables are mean values
+colnames(ds.means)[3:68] = paste0("Mean", colnames(ds.means)[3:68])
 
 # Write to output file
 write.table(ds.means, "HAR_means.txt", row.names=F)

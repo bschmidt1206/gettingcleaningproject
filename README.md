@@ -3,7 +3,7 @@
 
 The purpose of this project is to prepare a public dataset (the UCI HAR Dataset) for further analysis, and then perform some simple computations that summarize a subset of the original dataset.
 
-The output of the provided R script, run_analysis.R, is a second dataset, 'HAR_means.txt'.
+The output of the provided R script, 'run_analysis.R', is a second dataset, 'HAR_means.txt'.
 
 __Dataset Source__: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
@@ -11,11 +11,11 @@ __Dataset Reference__: Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra
 
 __Dataset Information__: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-Notes
-* Please see the README.txt file that accompanies the UCI HAR Dataset for further information about the dataset and how it was created.
-* The the UCI HAR Dataset must be downloaded and unzipped to the "UCI HAR Dataset" folder in the working directory before running this project's R script.
-* The 'run_analysis.R' R script contains all the logic for processing the UCI HAR Dataset once it is unzipped.
+Instructions: The UCI HAR Dataset must be downloaded and unzipped to the "UCI HAR Dataset" folder in the working directory before running this project's R script, 'run_analysis.R'.
 
+Please see the README.txt file that accompanies the UCI HAR Dataset for further information about the original dataset and how it was created.
+
+The 'run_analysis.R' R script contains all the logic for processing the UCI HAR Dataset once it is unzipped.
 
 ## Script Details
 
@@ -44,11 +44,10 @@ The order of the features in the dataset (columns from left to right) is assumed
 
 Per the requirements of the assignment, a subset of features are selected from the full dataset.
 The variables selected are the mean and standard deviation from each of the features.
-These are found by searching for 'mean(' and 'std(' within the feature names (feature names are listed in features_info.txt).
+These are found by searching for 'mean(' and 'std(' within the feature names.
 Note that this logic deliberately excludes the 'meanFreq' variables as well as the angle-specific variables such as 'angle(tBodyAccMean,gravity)' which happen to contain the text 'mean' or 'Mean' in their names.
 
 The grep function is used to find the index values of the desired variables; these variables are then extracted into a separate data frame (along with the subjectid and activityid).
-The grep function is also used to find the variable names of the variables of interest.  This vector of names is useful to inspect (to ensure the code is working) and is also used later in the script.
 
 [3] _Use descriptive activity names_
 
@@ -57,8 +56,7 @@ The columns of the dataset are also reordered for readability.
 
 [4] _Use descriptive variable names_
 
-The dataset uses descriptive variable names.  The variable names are taken from the 'features.txt' file.  
-Please see step [1] above for details since that is where the column names are changed.
+The dataset is modified to use more descriptive variable names.  The starting point for the variable names is the set of names in the 'features.txt' file.  Please see the CodeBook.md file for a list of all variable names and naming conventions used in the final dataset.
 
 [5] _Create a new table with the mean of each variable_
 
